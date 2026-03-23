@@ -27,6 +27,15 @@ alias gp='git pull'
 alias gitup='git add . && git commit -m "update" && git push'
 
 # ---------------------------------------------------------------------------
+# Dotfiles: pull latest and reload shell
+# ---------------------------------------------------------------------------
+dotup() {
+  local _df
+  [ "$(uname)" = "Darwin" ] && _df="$HOME/code/utils/dotfiles" || _df="$HOME/utils/dotfiles"
+  git -C "$_df" pull --ff-only && source ~/.bashrc && echo "Dotfiles updated and shell reloaded."
+}
+
+# ---------------------------------------------------------------------------
 # macOS only
 # ---------------------------------------------------------------------------
 if [ "$(uname)" = "Darwin" ]; then
