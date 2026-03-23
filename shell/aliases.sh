@@ -14,3 +14,4 @@ alias ll='ls -lah'
 # Git shortcuts
 alias gs='git status'
 alias gp='git pull'
+alias gitup='git add . && git commit -m "update" && git push'
